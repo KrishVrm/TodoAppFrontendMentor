@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles\main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Todo app</title>
+
+</head>
+
+<body>
+  <header>
+    <div class="logo-and-icons">
+      <h1 class="logo">TODO</h1>
+    </div>
+  </header>
+
+  <div class="todo-input-list">
+    <!-- input -->
+    <div class="input-and-button">
+      <input maxlength="25" type="text" class="todo-task-input" placeholder="Add a task...">
+      <p class="noText">Enter a task!</p>
+      <button class="add-btn">Add Task</button>
+    </div>
+
+    <!-- todoList -->
+    <div class="todo-container">
+      <ul class="todo-list"></ul>
+    </div>
+
+    <!-- footer -->
+    <div class="details">
+      <p class="tasksLeft">0 items left</p>
+      <div class="active-completed-all">
+        <button id="all" class="secondBtn">All</button>
+        <button id="active" class="secondBtn">Active</button>
+        <button id="completed" class="secondBtn">Completed</button>
+      </div>
+      <!-- <button class="clearCompleted secondBtn">Clear Completed</button> -->
+      <button class="clearAll secondBtn">Clear All</button>
+    </div>
+    <input type="text" class="search" placeholder="Search task...">
+    <p class="notCompleted">You have not done any task, as expected...</p>
+    <p class="completed">You have done all the tasks! Congo!</p>
+    <div class="time">
+      <div class="ist"></div>
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+      <div class="am_pm"></div>
+      <div class="day"></div>
+    </div>
+  </div>
+  <script src="script/script.js"></script>
+</body>
+
+</html>
