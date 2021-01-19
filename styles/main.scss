@@ -1,0 +1,326 @@
+@import 'globals';
+@import 'variables';
+@import 'mixins';
+
+body{
+    background: $Very-Dark-Blue;
+}
+
+header::before{
+    content: url("images/bg-desktop-dark.jpg");
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 19rem;
+    background-repeat: no-repeat;
+}
+
+.logo-and-icons{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+//^ TODO TASK INPUT 
+.todo-task-input, .search{
+    background: $Very-Dark-Desaturated-Blue;
+    color: $Light-Grayish-Blue;
+    width: 36rem;
+    height: 3rem;
+    padding: 0 20px;
+}
+
+.search{
+    margin-top: 1rem;
+    &:focus{
+        border: 2px solid $Very-Dark-Blue; 
+    }
+}
+
+//^ CONTAINER
+.todo-input-list{
+    display: flex;
+    margin-top: 1.7rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+//^ DIV STYLING 
+.todo, .details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: 3rem;
+    background: $Very-Dark-Desaturated-Blue;
+    color: $Light-Grayish-Blue;
+    width: 36rem;
+    padding: 0 20px;
+    border-bottom: 1px solid $Very-Dark-Grayish-Blue
+}
+.details{
+    border: none;
+}
+.todo_text{
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+.input-and-button{
+    margin-bottom: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-btn, .searchButton{
+    padding: 10px 0;
+    margin-top: .6rem;
+    width: 16rem;
+    background: $Very-Dark-Desaturated-Blue;
+    color: $Light-Grayish-Blue;
+    &:hover{
+        opacity: .9;
+        transition: .2s;
+    }
+    &:active{
+        transform: translateY(-.3rem);
+    }
+}
+
+.noText{
+    display: none;
+    margin-top: 8px;
+    color: white;
+    opacity: .6;
+    animation-name: shakeNoText;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+
+    @keyframes shakeNoText{
+        0%{
+            transform: translateX(-.1rem);
+        }
+        50%{
+            transform: translateX(.1rem);
+        }
+        100%{
+            transform: translateX(-.1rem);
+        }
+    }
+}
+
+.cross_svg{
+    width: 21px;
+    height: 21px;
+    cursor: default;
+    pointer-events: none;
+    &:hover{
+        .cross_svg_path{
+            fill: white;
+            transition: .2s;
+        }
+    }
+}
+
+.tasksLeft{
+    font-size:14px;
+    color: $Dark-Grayish-Blue;
+}
+
+.secondBtn{
+    background: none;
+    color: $Dark-Grayish-Blue;
+    font-size: 14px;
+    &:hover{
+        transform: translateY(-1px);
+        transition: .3s;
+    }
+}
+
+.tip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    color: $Dark-Grayish-Blue;
+    opacity: .9;
+    font-size: 16px;
+}
+#active{
+    padding: 0 10px;
+    padding-bottom: 4px;
+}
+
+#all{
+    color: $Bright-Blue;
+}
+
+.notCompleted, .completed{
+    display: none;
+    justify-content: center;
+    margin-top: 1.5rem;
+    color: $Dark-Grayish-Blue;
+}
+
+.animateTodo{
+    transition: .2s;
+    opacity: 0;
+}
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    // border: 2px solid red;
+    width: 36rem;
+
+    & > li {
+        margin-right: auto;
+        margin-left: 20px;
+    }
+
+    .checked{
+        background: $Check-Background;
+        border-radius: 50px;
+        height: 25px;
+        width: 25px;
+        opacity: .3;
+        &:hover{
+            opacity: 1;
+            transition: .2s;
+        }
+        &:active{
+            transform: translateY(4px);
+        }
+    }
+
+    .cross{
+        background: none;
+        height: 22px;
+        width: 22px;
+        padding-top: 2px;
+
+        &:hover{
+            .cross_svg_path{
+                fill: white;
+                transition: .2s;
+            }
+    }
+}
+.checkTask{
+    opacity: 1;
+    transition: .2s;
+}
+.lineThrough{
+    text-decoration: line-through;
+    opacity: .4;
+}
+
+.check_svg, .check_svg_path{
+    pointer-events: none;
+}
+}
+
+.time{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 36rem;
+    margin: 1.1rem 0 4rem 0;
+    color: $Dark-Grayish-Blue;
+}
+
+.ist, .hours, .minutes, .seconds, .day, .am_pm{
+    font-size: 1.1rem;
+}
+
+.am_pm{
+    margin-left: .5rem;
+}
+.day{
+    margin-left: auto;
+}
+.minutes{
+    padding: 0 10px;
+}
+
+.ist{
+    padding-right: 8px;
+}
+
+// .foundStyle{
+//     width: 4rem;
+//     background: red;
+//     color: 
+// }
+
+@media only screen and (max-width: 660px){
+    .todo-task-input, .todo, .details, .time, .search{
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 530px){
+    .todo-task-input, .todo, .details, .time, .search{
+        width: 20rem;
+    }
+    .ist, .hours, .minutes, .seconds, .day, .am_pm{
+        font-size: 1rem;
+    }
+
+    .details{
+        flex-direction: column;
+        padding: 18px 0;
+        height: 9rem;
+    }
+    .add-btn {
+        font-size: 16px;
+    }
+    #active{
+        padding: 0 30px;
+    }
+    nav{
+        flex-direction: column;
+    }
+}
+
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    .navLinks{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-left: 2rem;
+        align-items: center;
+        h1{
+            padding: 0 20px;
+        }
+        a{
+            color: white;
+
+            &:hover{
+                opacity: .8;
+                transition: .3s;
+            }
+        }
+    }
+}
